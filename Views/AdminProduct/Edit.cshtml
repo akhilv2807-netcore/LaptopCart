@@ -1,0 +1,41 @@
+﻿@model Product
+<div class="card border-0">
+    <div class="card-header ms-0 text-white" style="background-color:darkcyan">
+        <h1 class="p-2 text-center">Edit Product</h1>
+    </div>
+    <div class="card-body mt-3">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Name" class="form-control" placeholder="" />
+                <label class="ms-2 text-muted">Name</label>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Description" class="form-control" placeholder="" />
+                <label class="ms-2 text-muted">Description</label>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Price" class="form-control" placeholder="" />
+                <label class="ms-2 text-muted">Price</label>
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="mb-3 text-muted ">
+                <label asp-for="ImageFile" class="form-label ms-3">Product Image</label>
+                <div class="mb-2">
+                    <img src="@Model.ImagePath" width="150" height="150"/>
+                </div>
+                <input asp-for="ImageFile" type="file" class="form-control" placeholder="" />
+            </div>
+            <div class="row justify-content-between">
+                <div class="col-2">
+                    <a asp-action="index" class="btn btn-secondary">Back</a>
+                </div>
+                <div class="col-4 text-end">
+                    <button type="submit" class="w-35 btn text-white" style="background-color:darkcyan">Update Product</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
