@@ -1,5 +1,13 @@
 ﻿@model IEnumerable<Product>
-
+    
+    <div class="row mb-3 align-items-center">
+        <div class="col-md-4">
+            <h2 class="text-secondary">Product List</h2>
+        </div>
+        <div class="col-md-8 text-end">
+            <a asp-action="Create" class="btn btn-dark text-white"><i class="bi bi-plus-circle"></i> Add Product</a>
+        </div>
+    </div>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
